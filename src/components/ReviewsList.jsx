@@ -4,11 +4,18 @@ import { getReviews } from "../../utils";
 
 export function ReviewsList() {
   const [reviews, setReviews] = useState([]);
+  const [loading, setLoading] = useState(true);
+
   useEffect(() => {
     getReviews().then(({ reviews }) => {
       setReviews(reviews);
+      setLoading(false);
     });
   }, []);
+
+  if (loading) {
+    return <p>Page is loading...</p>;
+  }
 
   return (
     <main>
@@ -20,6 +27,10 @@ export function ReviewsList() {
               <Link to={`/${review.review_id}`}>
                 <h3>{review.title}</h3>
               </Link>
+              <img
+                src={review.review_img_url}
+                alt={`Image for ${review.title}`}
+              />
               <p>by {review.designer}</p>
             </li>
           );
