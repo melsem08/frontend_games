@@ -67,20 +67,3 @@ export function SingleReview() {
     </main>
   );
 }
-
-//    <h2>{currentItem.item_name}</h2>
-//    <p>{currentItem.description}</p>
-//    <img {currentReview.created_at.slice(0, 10)}
-//      src={currentItem.img_url}
-//      alt={`Picture of ${currentItem.item_name}`}
-//    ></img>
-//    <h3>{currentItem.price}</h3>
-//    <Link to={`/orders/${currentItem.item_id}`}>
-//      <button type="button">Order Item</button>
-//    </Link>
-
-//       "designer": "Jamey Stegmaier",
-//       "owner": "grumpy19",
-//
-//
-//       "votes": 100
