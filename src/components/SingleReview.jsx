@@ -3,7 +3,6 @@ import { Link, useParams } from "react-router-dom";
 import { getSingleReview } from "../../utils";
 import thumb_up from "../images/thumb-up.jpg";
 import thumb_down from "../images/thumb-down.jpg";
-import { Comments } from "./Comments";
 
 export function SingleReview() {
   const [currentReview, setCurrentReview] = useState({});
@@ -15,7 +14,7 @@ export function SingleReview() {
       setCurrentReview(review[0]);
       setLoading(false);
     });
-  });
+  }, [review_id]);
 
   if (loading) {
     return <p>Page is loading...</p>;
