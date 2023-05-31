@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
-import { getSingleReview } from "../../utils";
+import { getSingleReview, patchReview } from "../../utils";
 import thumb_up from "../images/thumb-up.jpg";
 import thumb_down from "../images/thumb-down.jpg";
+import { Comments } from "./Comments";
 
 export function SingleReview() {
   const [currentReview, setCurrentReview] = useState({});
@@ -15,6 +16,18 @@ export function SingleReview() {
       setLoading(false);
     });
   }, [review_id]);
+
+  function handleClick(review_id, value) {
+    setCurrentReview((currentReview) => {
+      if (value === "inc") {
+        return { ...currentReview, votes: currentReview.votes + 1 };
+      } else {
+        return { ...currentReview, votes: currentReview.votes - 1 };
+      }
+    });
+    alert("Thanks for voting!");
+    patchReview(review_id, value);
+  }
 
   if (loading) {
     return <p>Page is loading...</p>;
@@ -55,12 +68,18 @@ export function SingleReview() {
           className="thumb-down"
           src={thumb_down}
           alt="Image for thumb-down icon"
+          onClick={() => {
+            handleClick(currentReview.review_id, "dec");
+          }}
         />
         <h3>Votes: {currentReview.votes}</h3>
         <img
           className="thumb-up"
           src={thumb_up}
           alt="Image for thumb-up icon"
+          onClick={() => {
+            handleClick(currentReview.review_id, "inc");
+          }}
         />
       </div>
       <Comments />
