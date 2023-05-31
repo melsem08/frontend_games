@@ -15,7 +15,7 @@ export function SingleReview() {
       setCurrentReview(review[0]);
       setLoading(false);
     });
-  });
+  }, [review_id]);
 
   if (loading) {
     return <p>Page is loading...</p>;
@@ -64,6 +64,7 @@ export function SingleReview() {
           alt="Image for thumb-up icon"
         />
       </div>
+      <Comments />
     </main>
   );
 }

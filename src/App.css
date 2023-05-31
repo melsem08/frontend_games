@@ -121,3 +121,37 @@ button:hover {
   height: 35px;
   padding: 5px;
 }
+
+.commentLeft {
+  display: inline-block;
+  margin-left: 2px;
+  width: 42vw;
+  text-align: left;
+}
+
+.commentRight {
+  display: inline-block;
+  margin-left: 2px;
+  width: 42vw;
+  text-align: right;
+}
+.singleComment {
+  border: 1px solid blue;
+  margin: 2px;
+}
+.votes {
+  font-family: "Noto Sans", sans-serif;
+}
+.votesWrapper {
+  display: flex;
+  justify-content: right;
+}
+.arrow-down {
+  width: 15px;
+  height: 35px;
+}
+.arrow-up {
+  width: 15px;
+  height: 35px;
+  margin-right: 10px;
+}
