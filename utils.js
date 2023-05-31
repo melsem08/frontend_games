@@ -13,3 +13,11 @@ export function getSingleReview(review_id) {
     return res.json();
   });
 }
+
+export function getComments(review_id) {
+  return fetch(
+    `https://games-api-project.onrender.com/api/reviews/${review_id}/comments`
+  ).then((res) => {
+    return res.json();
+  });
+}

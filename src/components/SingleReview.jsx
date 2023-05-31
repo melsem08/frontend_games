@@ -63,6 +63,7 @@ export function SingleReview() {
           alt="Image for thumb-up icon"
         />
       </div>
+      <Comments />
     </main>
   );
 }
