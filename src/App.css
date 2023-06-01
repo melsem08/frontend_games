@@ -155,3 +155,35 @@ button:hover {
   height: 35px;
   margin-right: 10px;
 }
+body.sign_in {
+  background-image: linear-gradient(
+    to right,
+    rgb(117, 89, 221),
+    rgb(191, 2, 244)
+  );
+}
+.userImage {
+  width: 25vw;
+  height: 33vh;
+  border: 5px solid rgb(250, 171, 24);
+  background-color: rgb(83, 0, 131);
+  border-radius: 20%;
+}
+.userList {
+  display: inline-grid;
+  margin: 10px;
+}
+.NavName {
+  color: rgb(0, 0, 0);
+}
+.errorMessage {
+  color: red;
+  font-weight: bold;
+}
+textarea {
+  border: 2px solid blue;
+  width: 99%;
+  height: 110px;
+  margin: 5px 0;
+  padding: 3px;
+}

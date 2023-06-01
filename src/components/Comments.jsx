@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { getComments } from "../../utils";
 import arrow_up from "../images/arrow_up.png";
 import arrow_down from "../images/arrow_down.png";
+import { NewComment } from "./NewComment";
 
 export function Comments() {
   const { review_id } = useParams();
@@ -22,6 +23,7 @@ export function Comments() {
   return (
     <section>
       <h3>{comments.length} comments so far:</h3>
+      <NewComment setComments={setComments} />
       {comments.map((comment) => {
         return (
           <div key={comment.comment_id} className="singleComment">
