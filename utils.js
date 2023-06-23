@@ -42,3 +42,42 @@ export function patchReview(review_id, value) {
     return res.json();
   });
 }
+
+export function getAllUsers() {
+  return fetch(`https://games-api-project.onrender.com/api/users`).then(
+    (res) => {
+      return res.json();
+    }
+  );
+}
+
+export function postComment(username, body, review_id) {
+  return fetch(
+    `https://games-api-project.onrender.com/api/reviews/${review_id}/comments`,
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json;charset=utf-8",
+      },
+      body: JSON.stringify({ username: username, body: body }),
+    }
+  ).then((res) => {
+    return res.json();
+  });
+}
+
+export function getCategoryReviews(category) {
+  return fetch(
+    `https://games-api-project.onrender.com/api/reviews?category=${category}`
+  ).then((res) => {
+    return res.json();
+  });
+}
+
+export function getCategories() {
+  return fetch(`https://games-api-project.onrender.com/api/categories`).then(
+    (res) => {
+      return res.json();
+    }
+  );
+}
