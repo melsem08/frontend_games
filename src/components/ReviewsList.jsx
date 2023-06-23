@@ -18,16 +18,19 @@ export function ReviewsList() {
   }
 
   return (
-    <main>
+    <main id="main">
       <h2>Reviews</h2>
-      <ul>
+      <ul className="flex-container">
         {reviews.map((review) => {
           return (
-            <li key={review.review_id}>
-              <Link to={`/${review.review_id}`}>
-                <h3>{review.title}</h3>
-              </Link>
+            <li key={review.review_id} className="flex-item">
+              {/* <Link to={`/reviews/${review.review_id}`}> */}
+              <div className="overlay">
+                <span>{review.title}</span>
+              </div>
+              {/* </Link> */}
               <img
+                className="reviewImage"
                 src={review.review_img_url}
                 alt={`Image for ${review.title}`}
               />

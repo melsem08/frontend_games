@@ -40,6 +40,7 @@ export function NewComment({ setComments }) {
         multiliine="true"
         value={newComment}
         onChange={handleChange}
+        placeholder="Don't forget to sign-in into your account before posting!"
       ></textarea>
       <button type="submit">Add comment</button>
       <p className="errorMessage">{errorMessage}</p>

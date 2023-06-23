@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { UserContext } from "../App";
 
-export function NavBar({ setUser }) {
+export function NavBar(setUser) {
   const user = useContext(UserContext);
   function checkSignIn() {
     if (user.username === undefined) {
@@ -14,10 +14,12 @@ export function NavBar({ setUser }) {
     } else {
       return (
         <>
-          <button type="button" onClick={handleClick}>
-            Sign out
-          </button>
-          <h3 className="NavName">Hello, {user.username}</h3>
+          <a>
+            <button type="button" onClick={handleClick}>
+              Sign out
+            </button>
+          </a>
+          <p className="NavName">Hello, {user.username}</p>
         </>
       );
     }
@@ -27,7 +29,7 @@ export function NavBar({ setUser }) {
     }
   }
   return (
-    <nav>
+    <nav id="nav">
       <Link to="/">
         <button type="button">Reviews</button>
       </Link>

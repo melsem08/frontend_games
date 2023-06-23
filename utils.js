@@ -65,3 +65,19 @@ export function postComment(username, body, review_id) {
     return res.json();
   });
 }
+
+export function getCategoryReviews(category) {
+  return fetch(
+    `https://games-api-project.onrender.com/api/reviews?category=${category}`
+  ).then((res) => {
+    return res.json();
+  });
+}
+
+export function getCategories() {
+  return fetch(`https://games-api-project.onrender.com/api/categories`).then(
+    (res) => {
+      return res.json();
+    }
+  );
+}

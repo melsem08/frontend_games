@@ -7,6 +7,7 @@ import { NavBar } from "./components/NavBar";
 import { SignIn } from "./components/SignIn";
 import { useState, createContext } from "react";
 import { Categories } from "./components/Categories";
+import { CategoryReviews } from "./components/CategoryReviews";
 
 const UserContext = createContext();
 
@@ -20,9 +21,10 @@ function App() {
         <NavBar setUser={setUser} />
         <Routes>
           <Route path="/" element={<ReviewsList />} />
-          <Route path="/:review_id" element={<SingleReview />} />
+          <Route path="/reviews/:review_id" element={<SingleReview />} />
           <Route path="/sign_in" element={<SignIn setUser={setUser} />} />
           <Route path="/categories" element={<Categories />} />
+          <Route path="/:category_name/reviews" element={<CategoryReviews />} />
         </Routes>
       </UserContext.Provider>
     </BrowserRouter>

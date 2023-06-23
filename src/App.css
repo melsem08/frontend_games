@@ -1,19 +1,121 @@
 #root {
-  max-width: 1280px;
+  /* max-width: 1280px; */
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
 }
+/* :root {
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(0, 0, 0, 0.87);
+  background-color: #ffffff;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+} */
 
 nav {
   background-color: rgb(220, 139, 205);
   width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  /* This aligns items to the end line on main-axis */
+  justify-content: flex-end;
 }
 
+@media all and (max-width: 800px) {
+  nav {
+    /* When on medium sized screens, we center it by evenly distributing empty space around items */
+    justify-content: center;
+  }
+}
+
+/* Small screens */
+@media all and (max-width: 500px) {
+  nav {
+    /* On small screens, we are no longer using row direction but column */
+    flex-direction: column;
+  }
+}
+.flex-container {
+  /* We first create a flex layout context */
+  display: flex;
+
+  /* Then we define the flow direction 
+     and if we allow the items to wrap 
+   * Remember this is the same as:
+   * flex-direction: row;
+   * flex-wrap: wrap;
+   */
+  flex-flow: row wrap;
+
+  /* Then we define how is distributed the remaining space */
+  justify-content: space-around;
+
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.flex-container > li {
+  flex-basis: 350px; /* width: 350px; */
+  position: relative;
+  cursor: pointer;
+}
+
+.flex-container li img {
+  object-fit: cover;
+  max-width: 100%;
+  height: 25vw;
+  vertical-align: middle;
+  border-radius: 5px;
+}
+.flex-container li:hover .overlay {
+  transform: scale(1);
+}
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(57, 57, 57, 0.502);
+  top: 0;
+  left: 0;
+  transform: scale(0);
+  transition: all 0.2s 0.1s ease-in-out;
+  color: #fff;
+  border-radius: 5px;
+  /* center overlay text */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* .flex-item {
+  background: rgb(228, 193, 187);
+  padding: 5px;
+  width: 25vw;
+  height: 33vh;
+  margin-top: 10px;
+  line-height: 150px;
+  color: white;
+  font-weight: bold;
+  font-size: 1rem;
+  text-align: center;
+} */
+/* .reviewImage {
+  width: 25vw;
+  height: 33vh;
+  border-radius: 15%;
+} */
 button {
   background-color: #cf245f;
   background-image: linear-gradient(to bottom right, #fcd34d, #ef4444, #ec4899);
-  border-radius: 100px;
+  border-radius: 10px;
+  border: 1px solid transparent;
   box-shadow: rgba(44, 187, 149, 0.2) 0 -25px 18px -14px inset,
     rgba(44, 187, 99, 0.15) 0 1px 2px, rgba(44, 187, 99, 0.15) 0 2px 4px,
     rgba(44, 187, 99, 0.15) 0 4px 8px, rgba(44, 187, 99, 0.15) 0 8px 16px,
@@ -25,6 +127,7 @@ button {
   padding: 4px 20px;
   text-align: center;
   text-decoration: none;
+  font-weight: 500;
   transition: all 250ms;
   border: 0;
   font-size: 16px;
@@ -41,41 +144,21 @@ button:hover {
     rgba(44, 187, 99, 0.25) 0 16px 32px;
   transform: scale(1.05) rotate(-1deg);
 }
-
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+/* h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
 }
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+a:hover {
+  color: #535bf2;
 }
 
 .card {
   padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
 }
 
 .review_image {
@@ -164,15 +247,24 @@ body.sign_in {
 }
 .userImage {
   width: 25vw;
-  height: 33vh;
+  height: 30vh;
   border: 5px solid rgb(250, 171, 24);
   background-color: rgb(83, 0, 131);
   border-radius: 20%;
+  max-width: 100%;
 }
 .userList {
   display: inline-grid;
   margin: 10px;
 }
+
+.testW {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
 .NavName {
   color: rgb(0, 0, 0);
 }
@@ -186,4 +278,8 @@ textarea {
   height: 110px;
   margin: 5px 0;
   padding: 3px;
-}
+} */
+/* .reviewList {
+  display: inline-grid;
+  margin: 10px;
+} */

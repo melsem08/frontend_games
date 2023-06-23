@@ -28,28 +28,32 @@ export function SignIn({ setUser }) {
     <main className="sign-in">
       <h2>Hello! Please, choose your user to sign-in:</h2>
       <ul>
-        {allUsers.map((user) => {
-          return (
-            <li key={user.username} className="userList">
-              <h3>{user.username}</h3>
-              <p>{user.name}</p>
-              <img
-                className="userImage"
-                src={user.avatar_url}
-                alt={`${user.username}'s avatar image`}
-              ></img>
-              <br />
-              <button
-                type="button"
-                onClick={() => {
-                  handleClick(user);
-                }}
-              >
-                Choose ME!
-              </button>
-            </li>
-          );
-        })}
+        <div className="testW">
+          {allUsers.map((user) => {
+            return (
+              <div className="testSingle">
+                <li key={user.username} className="userList">
+                  <h3>{user.username}</h3>
+                  <p>{user.name}</p>
+                  <img
+                    className="userImage"
+                    src={user.avatar_url}
+                    alt={`${user.username}'s avatar image`}
+                  ></img>
+                  <br />
+                  <button
+                    type="button"
+                    onClick={() => {
+                      handleClick(user);
+                    }}
+                  >
+                    Choose ME!
+                  </button>
+                </li>
+              </div>
+            );
+          })}
+        </div>
       </ul>
     </main>
   );
