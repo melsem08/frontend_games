@@ -93,6 +93,7 @@ nav {
   display: flex;
   align-items: center;
   justify-content: center;
+  font-style: oblique;
 }
 /* .flex-item {
   background: rgb(228, 193, 187);
@@ -144,12 +145,12 @@ button:hover {
     rgba(44, 187, 99, 0.25) 0 16px 32px;
   transform: scale(1.05) rotate(-1deg);
 }
-/* h1 {
+ h1 {
   font-size: 3.2em;
   line-height: 1.1;
 }
 a {
-  font-weight: 500;
+  font-weight: 500;l
   color: #646cff;
   text-decoration: inherit;
 }
@@ -228,7 +229,7 @@ a:hover {
 .votesWrapper {
   display: flex;
   justify-content: right;
-}
+}Super
 .arrow-down {
   width: 15px;
   height: 35px;
@@ -238,7 +239,7 @@ a:hover {
   height: 35px;
   margin-right: 10px;
 }
-body.sign_in {
+body.sign_in {Super
   background-image: linear-gradient(
     to right,
     rgb(117, 89, 221),
@@ -246,7 +247,7 @@ body.sign_in {
   );
 }
 .userImage {
-  width: 25vw;
+  width: 25vw;Super
   height: 30vh;
   border: 5px solid rgb(250, 171, 24);
   background-color: rgb(83, 0, 131);
@@ -262,7 +263,7 @@ body.sign_in {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  justify-content: space-evenly;Super
 }
 
 .NavName {
@@ -278,7 +279,7 @@ textarea {
   height: 110px;
   margin: 5px 0;
   padding: 3px;
-} */
+} 
 /* .reviewList {
   display: inline-grid;
   margin: 10px;

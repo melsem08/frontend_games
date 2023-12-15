@@ -24,17 +24,25 @@ export function ReviewsList() {
         {reviews.map((review) => {
           return (
             <li key={review.review_id} className="flex-item">
-              {/* <Link to={`/reviews/${review.review_id}`}> */}
-              <div className="overlay">
-                <span>{review.title}</span>
-              </div>
-              {/* </Link> */}
+              {
+                <Link to={`/reviews/${review.review_id}`}>
+                  <div className="overlay">
+                    <span>
+                      {review.title} <br /> <br /> by {review.owner}
+                    </span>
+                  </div>
+                </Link>
+              }
               <img
                 className="reviewImage"
                 src={review.review_img_url}
                 alt={`Image for ${review.title}`}
               />
-              <p>by {review.designer}</p>
+              <p>
+                {review.title} <br /> Rating: {review.votes} Comments:{" "}
+                {review.comment_count} <br /> Created:{" "}
+                {review.created_at.slice(0, 10)}
+              </p>
             </li>
           );
         })}
