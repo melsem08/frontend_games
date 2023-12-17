@@ -1,9 +1,17 @@
-export function getReviews() {
-  return fetch(`https://games-api-project.onrender.com/api/reviews`).then(
-    (res) => {
+export function getReviews({ category, order, sort_by }) {
+  if (category) {
+    return fetch(
+      `https://games-api-project.onrender.com/api/reviews?category=${category}&sort_by=${sort_by}&order=${order}`
+    ).then((res) => {
       return res.json();
-    }
-  );
+    });
+  } else {
+    return fetch(
+      `https://games-api-project.onrender.com/api/reviews?sort_by=${sort_by}&order=${order}`
+    ).then((res) => {
+      return res.json();
+    });
+  }
 }
 
 export function getSingleReview(review_id) {

@@ -24,7 +24,7 @@ export function Categories() {
         {categories.map((category) => {
           return (
             <li key={category.slug}>
-              <Link to={`/${category.slug}/reviews`}>
+              <Link to={`/reviews?category=${category.slug}`}>
                 <h3>{category.slug}</h3>
               </Link>
               <p>{category.description}</p>

@@ -1,18 +1,51 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams, useLocation } from "react-router-dom";
 import { getReviews } from "../../utils";
-import avatar from "../images/avatar.svg";
 
 export function ReviewsList() {
+  const [searchParams] = useSearchParams();
+  const chosenReviewCategory = searchParams.get("category");
   const [reviews, setReviews] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [searchQuery, setSearchQuery] = useState({
+    category: chosenReviewCategory,
+    order: "desc",
+    sort_by: "created_at",
+  });
+  let { state } = useLocation();
+
+  console.log("Review Category: ", chosenReviewCategory);
+  console.log(searchQuery);
 
   useEffect(() => {
-    getReviews().then(({ reviews }) => {
+    setSearchQuery((currQuery) => {
+      return {
+        ...currQuery,
+        category: chosenReviewCategory,
+        order: "desc",
+        sort_by: "created_at",
+      };
+    });
+  }, [chosenReviewCategory]);
+
+  useEffect(() => {
+    getReviews(searchQuery).then(({ reviews }) => {
       setReviews(reviews);
       setLoading(false);
     });
-  }, []);
+  }, [searchQuery, state]);
+
+  function changeOrder(value) {
+    setSearchQuery((currQuery) => {
+      return { ...currQuery, order: value };
+    });
+  }
+
+  function changeSortBy(value) {
+    setSearchQuery((currQuery) => {
+      return { ...currQuery, sort_by: value };
+    });
+  }
 
   if (loading) {
     return <p>Page is loading...</p>;
@@ -20,7 +53,25 @@ export function ReviewsList() {
 
   return (
     <main id="main">
-      <h2>Reviews</h2>
+      {chosenReviewCategory ? (
+        <h2>Board Game Reviews ({chosenReviewCategory} category)</h2>
+      ) : (
+        <h2>Board Game Reviews</h2>
+      )}
+      <div className="sortingOptions">
+        <label htmlFor="sortingOptions">Sort By: </label>
+        <select
+          name="sortingOptions"
+          onChange={(event) => changeSortBy(event.target.value)}
+        >
+          <option value="created_at">Date</option>
+          <option value="comment_count">Comment Count</option>
+          <option value="votes">Votes</option>
+        </select>
+
+        <button onClick={() => changeOrder("asc")}>Ascending</button>
+        <button onClick={() => changeOrder("desc")}>Descending</button>
+      </div>
       <ul className="flex-container">
         {reviews.map((review) => {
           return (
@@ -40,7 +91,7 @@ export function ReviewsList() {
                 alt={`Image for ${review.title}`}
               />
               <Link to={`/reviews/${review.review_id}`}>
-                <h3 className="entry-title mg0 mgb20">{review.title}</h3>
+                <h3 className="ReviewTitle">{review.title}</h3>
               </Link>
               <div className="reviewInfo">
                 <a className="user-link">

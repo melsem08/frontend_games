@@ -2,24 +2,25 @@ import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { UserContext } from "../App";
 
-export function NavBar(setUser) {
+export function NavBar({ setUser }) {
   const user = useContext(UserContext);
   function checkSignIn() {
     if (user.username === undefined) {
       return (
-        <Link to="/sign_in">
-          <button type="button">Sign in</button>
+        <Link to="/sign_in" className="SingleNavOption">
+          Sign in
         </Link>
       );
     } else {
       return (
         <>
-          <a>
-            <button type="button" onClick={handleClick}>
-              Sign out
-            </button>
-          </a>
-          <p className="NavName">Hello, {user.username}</p>
+          <div className="SingleNavOption" onClick={handleClick}>
+            {/* <div className="SignOut">
+            <a onClick={handleClick}>Sign out</a>
+          </div> */}
+            Sign Out
+          </div>
+          <div className="Username">Hello, {user.username}</div>
         </>
       );
     }
@@ -29,12 +30,12 @@ export function NavBar(setUser) {
     }
   }
   return (
-    <nav id="nav">
-      <Link to="/">
-        <button type="button">Reviews</button>
+    <nav className="Nav">
+      <Link to="/reviews" className="SingleNavOption">
+        Reviews
       </Link>
-      <Link to="/categories">
-        <button type="button">Categories</button>
+      <Link to="/categories" className="SingleNavOption">
+        Categories
       </Link>
       {checkSignIn()}
     </nav>

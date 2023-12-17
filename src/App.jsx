@@ -20,7 +20,7 @@ function App() {
         <Header />
         <NavBar setUser={setUser} />
         <Routes>
-          <Route path="/" element={<ReviewsList />} />
+          <Route path="/reviews" element={<ReviewsList />} />
           <Route path="/reviews/:review_id" element={<SingleReview />} />
           <Route path="/sign_in" element={<SignIn setUser={setUser} />} />
           <Route path="/categories" element={<Categories />} />

@@ -31,8 +31,8 @@ export function SignIn({ setUser }) {
         <div className="testW">
           {allUsers.map((user) => {
             return (
-              <div className="testSingle">
-                <li key={user.username} className="userList">
+              <div className="testSingle" key={user.username}>
+                <li className="userList">
                   <h3>{user.username}</h3>
                   <p>{user.name}</p>
                   <img
