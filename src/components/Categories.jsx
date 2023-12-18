@@ -18,16 +18,29 @@ export function Categories() {
   }
 
   return (
-    <main>
-      <h2>List of categories:</h2>
+    <main className="Categories">
+      <h2 className="CategoriesHeader">Board Game Reviews Categories</h2>
+      <p>
+        If you want to browse some specific categories we’ve curated it just for
+        you. Here you will find reviews of strategy games, dexterity games,
+        deck-building games plus anything else we can think of to share with
+        you. Select one of the options below to explore all reviews in chosen
+        category.
+      </p>
       <ul>
         {categories.map((category) => {
           return (
             <li key={category.slug}>
-              <Link to={`/reviews?category=${category.slug}`}>
-                <h3>{category.slug}</h3>
+              <p>
+                <span className="CategoryName">{category.slug}</span>{" "}
+                {category.description}
+              </p>
+              <Link
+                to={`/reviews?category=${category.slug}`}
+                className="CategoryLink"
+              >
+                Click here to choose {category.slug} category
               </Link>
-              <p>{category.description}</p>
             </li>
           );
         })}

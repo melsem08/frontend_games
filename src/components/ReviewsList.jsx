@@ -90,9 +90,9 @@ export function ReviewsList() {
                 src={review.review_img_url}
                 alt={`Image for ${review.title}`}
               />
-              <Link to={`/reviews/${review.review_id}`}>
-                <h3 className="ReviewTitle">{review.title}</h3>
-              </Link>
+              {/* <Link to={`/reviews/${review.review_id}`}>
+                <h3 className="ReviewsTitle">{review.title}</h3>
+              </Link> */}
               <div className="reviewInfo">
                 <a className="user-link">
                   <svg
@@ -147,6 +147,9 @@ export function ReviewsList() {
                 </svg>
                 {review.votes}
               </div>
+              <Link to={`/reviews/${review.review_id}`}>
+                <h3 className="ReviewsTitle">{review.title}</h3>
+              </Link>
             </li>
           );
         })}

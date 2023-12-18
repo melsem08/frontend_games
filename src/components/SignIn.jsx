@@ -28,7 +28,7 @@ export function SignIn({ setUser }) {
     <main className="sign-in">
       <h2>Hello! Please, choose your user to sign-in:</h2>
       <ul>
-        <div className="testW">
+        <div className="AccountsContainer">
           {allUsers.map((user) => {
             return (
               <div className="testSingle" key={user.username}>

@@ -35,53 +35,44 @@ export function SingleReview() {
 
   return (
     <main>
-      <img
-        className="review_image"
-        src={currentReview.review_img_url}
-        alt={`Image of ${currentReview.title}`}
-      />
-      <h2>{currentReview.title}</h2>
-      <div className="bodyWrapper">
-        <b>
-          <div className="top-left">
-            Posted: {currentReview.created_at.slice(0, 10)}
-          </div>
-          <div className="top-right">
-            Category:{" "}
-            <Link to={`/${currentReview.category}/reviews`}>
-              {currentReview.category}
-            </Link>
-          </div>
-        </b>
-      </div>
-      <p>{currentReview.review_body}</p>
-      <div className="bodyWrapper">
-        <b>
-          <div className="bottom-left">
-            Designed by: {currentReview.designer}{" "}
-          </div>
-          <div className="bottom-right">Reviewer: {currentReview.owner}</div>
-        </b>
-      </div>
-      <div className="bodyWrapper">
+      <article className="ReviewContainer">
+        <h2 className="ReviewTitle">{currentReview.title}</h2>
+        <div>
+          <b>Posted:</b> {currentReview.created_at.slice(0, 10)}
+          <br />
+          <b>Category:</b>{" "}
+          <Link to={`/${currentReview.category}/reviews`}>
+            {currentReview.category}
+          </Link>
+        </div>
         <img
-          className="thumb-down"
-          src={thumb_down}
-          alt="Image for thumb-down icon"
-          onClick={() => {
-            handleClick(currentReview.review_id, "dec");
-          }}
+          className="review_image"
+          src={currentReview.review_img_url}
+          alt={`Image of ${currentReview.title}`}
         />
-        <h3>Votes: {currentReview.votes}</h3>
-        <img
-          className="thumb-up"
-          src={thumb_up}
-          alt="Image for thumb-up icon"
-          onClick={() => {
-            handleClick(currentReview.review_id, "inc");
-          }}
-        />
-      </div>
+        <p>{currentReview.review_body}</p>
+        <b>Game designer: </b> {currentReview.designer} <br />
+        <b>Reviewer: </b> {currentReview.owner}
+        <div className="VotesWrapper">
+          <img
+            className="thumb-down"
+            src={thumb_down}
+            alt="Image for thumb-down icon"
+            onClick={() => {
+              handleClick(currentReview.review_id, "dec");
+            }}
+          />
+          <h3>Votes: {currentReview.votes}</h3>
+          <img
+            className="thumb-up"
+            src={thumb_up}
+            alt="Image for thumb-up icon"
+            onClick={() => {
+              handleClick(currentReview.review_id, "inc");
+            }}
+          />
+        </div>
+      </article>
       <Comments />
     </main>
   );

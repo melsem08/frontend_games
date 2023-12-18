@@ -6,8 +6,11 @@ export function Header() {
     <Link to={`/`}>
       <div className="Header">
         <header>
-          {/* <h1 className="HeaderContent">NC Games Magazine</h1> */}
-          <img src={header_logo} alt="Header Logo"></img>
+          <img
+            src={header_logo}
+            alt="Header Logo"
+            className="HeaderImage"
+          ></img>
         </header>
       </div>
     </Link>

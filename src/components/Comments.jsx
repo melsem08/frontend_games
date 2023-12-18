@@ -21,23 +21,20 @@ export function Comments() {
     return <h3>Comments are loading...</h3>;
   }
   return (
-    <section>
+    <section className="CommentsContainer">
       <h3>{comments.length} comments so far:</h3>
       <NewComment setComments={setComments} />
       {comments.map((comment) => {
         return (
           <div key={comment.comment_id} className="singleComment">
-            <div className="bodyWrapper">
-              <b>
-                <div className="commentLeft">
-                  Posted: {comment.created_at.slice(0, 10)} at{" "}
-                  {comment.created_at.slice(11, 19)}
-                </div>
-                <div className="commentRight">{comment.author} said:</div>
-              </b>
+            <div className="CommentDateAndAuthor">
+              Posted {comment.created_at.slice(0, 10)} at{" "}
+              {comment.created_at.slice(11, 19)} by {comment.author}:
             </div>
-            <p>{comment.body}</p>
-            <div className="votesWrapper">
+            <p>
+              <b>{comment.body}</b>
+            </p>
+            <div className="VotesWrapper">
               <img
                 className="arrow-down"
                 src={arrow_down}

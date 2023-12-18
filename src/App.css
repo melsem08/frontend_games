@@ -14,12 +14,15 @@
   flex-direction: column;
   align-items: center;
 }
+.HeaderImage {
+  width: 100%;
+}
 
-.HeaderContent {
+/* .HeaderContent {
   margin: 0 auto;
   width: 96%;
   font-weight: 700;
-}
+} */
 
 .Nav {
   background-color: rgb(220, 139, 205);
@@ -70,18 +73,24 @@
 }
 
 @media all and (max-width: 800px) {
-  nav {
+  .Nav {
     /* When on medium sized screens, we center it by evenly distributing empty space around items */
     justify-content: center;
   }
+  /* .HeaderImage {
+    width: 100%;
+  } */
 }
 
 /* Small screens */
 @media all and (max-width: 500px) {
-  nav {
+  .Nav {
     /* On small screens, we are no longer using row direction but column */
     flex-direction: column;
   }
+  /* .HeaderImage {
+    width: 100%;
+  } */
 }
 .sortingOptions {
   font-size: 16px;
@@ -107,7 +116,8 @@
   justify-content: space-around;
 
   padding: 0;
-  margin: 0;
+  margin-left: 3%;
+  margin-right: 3%;
   list-style: none;
 }
 .flex-container > li {
@@ -143,7 +153,7 @@
   justify-content: center;
   font-style: oblique;
 }
-.ReviewTitle {
+.ReviewsTitle {
   font-size: 18px;
   font-weight: 800;
 }
@@ -162,23 +172,7 @@
   font-size: 12px !important;
   margin-bottom: 10px;
 }
-/* .flex-item {
-  background: rgb(228, 193, 187);
-  padding: 5px;
-  width: 25vw;
-  height: 33vh;
-  margin-top: 10px;
-  line-height: 150px;
-  color: white;
-  font-weight: bold;
-  font-size: 1rem;
-  text-align: center;
-} */
-/* .reviewImage {
-  width: 25vw;
-  height: 33vh;
-  border-radius: 15%;
-} */
+
 button {
   background-color: #cf245f;
   background-image: linear-gradient(to bottom right, #fcd34d, #ef4444, #ec4899);
@@ -229,62 +223,70 @@ a:hover {
   padding: 2em;
 }
 
+.ReviewContainer {
+  /* border: 3px solid rgb(210, 191, 13); */
+  padding: 15px;
+  content: "";
+  display: table;
+  text-align: left;
+}
+.ReviewTitle {
+  text-align: center;
+  /* color: rgb(0, 29, 61); */
+  font-weight: 700;
+  font-size: x-large;
+  /* margin-block: 0px; */
+  /* padding: 10px; */
+}
 .review_image {
-  padding: 20px;
+  margin: 1%;
+  border-radius: 5%;
+  width: 35%;
+  height: 35%;
 }
 
-.bodyWrapper {
+.VotesWrapper {
   display: flex;
   justify-content: center;
-}
-.top-left {
-  display: inline-block;
-  margin-left: 2px;
-  width: 42vw;
-  text-align: left;
-}
-.top-right {
-  display: inline-block;
-  margin-left: 2px;
-  width: 42vw;
-  text-align: right;
-}
-.bottom-left {
-  display: inline-block;
-  margin-left: 2px;
-  width: 30vw;
-  text-align: left;
-}
-.bottom-right {
-  display: inline-block;
-  margin-left: 2px;
-  width: 30vw;
-  text-align: right;
 }
 
 .thumb-down {
   width: 35px;
   height: 35px;
   padding: 5px;
+  border-radius: 50%;
 }
 .thumb-up {
   width: 35px;
   height: 35px;
   padding: 5px;
+  border-radius: 50%;
+}
+.thumb-up:hover {
+  background-color: rgb(49, 155, 13);
+  cursor: pointer;
+  border-radius: 50%;
+}
+.thumb-down:hover {
+  background-color: rgb(231, 11, 11);
+  cursor: pointer;
+  border-radius: 50%;
 }
 
-.commentLeft {
-  display: inline-block;
-  margin-left: 2px;
-  width: 42vw;
-  text-align: left;
+.CommentsContainer {
+  /* border: 3px solid rgb(18, 79, 5); */
+  padding: 15px;
+  content: "";
+  display: table;
+  justify-content: center;
+  width: 97.5%;
 }
-
-.commentRight {
-  display: inline-block;
-  margin-left: 2px;
-  width: 42vw;
-  text-align: right;
+.CommentForm {
+  background-color: rgb(191, 219, 174);
+  padding: 10px;
+}
+.CommentDateAndAuthor {
+  font-style: oblique;
 }
 .singleComment {
   border: 1px solid blue;
@@ -293,44 +295,36 @@ a:hover {
 .votes {
   font-family: "Noto Sans", sans-serif;
 }
-.votesWrapper {
-  display: flex;
-  justify-content: right;
-}
-Super .arrow-down {
-  width: 15px;
-  height: 35px;
+.arrow-down {
+  width: 10px;
+  height: 25px;
 }
 .arrow-up {
-  width: 15px;
-  height: 35px;
-  margin-right: 10px;
+  width: 10px;
+  height: 25px;
 }
-body.sign_in {
-  background-image: linear-gradient(
-    to right,
-    rgb(117, 89, 221),
-    rgb(191, 2, 244)
-  );
-}
-.userImage {
-  width: 25vw;
-  height: 30vh;
+.AccountsContainer li img {
+  width: 20vw;
+  height: 35vh;
   border: 5px solid rgb(250, 171, 24);
-  background-color: rgb(83, 0, 131);
   border-radius: 20%;
   max-width: 100%;
 }
-.userList {
-  display: inline-grid;
-  margin: 10px;
-}
 
-.testW {
+.AccountsContainer {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-evenly;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.AccountsContainer > li {
+  flex-basis: 30vw;
+  position: relative;
+  cursor: pointer;
 }
 
 .NavName {
@@ -347,7 +341,18 @@ textarea {
   margin: 5px 0;
   padding: 3px;
 }
-/* .reviewList {
-  display: inline-grid;
-  margin: 10px;
-} */
+.Categories {
+  text-align: left;
+  margin-left: 25px;
+}
+.CategoriesHeader {
+  text-align: center;
+}
+.CategoryName {
+  font-weight: bold;
+  margin-right: 25px;
+}
+.CategoryLink {
+  font-weight: 500;
+  color: #004ef6;
+}
