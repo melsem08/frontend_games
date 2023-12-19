@@ -31,6 +31,9 @@ export function NavBar({ setUser }) {
   }
   return (
     <nav className="Nav">
+      <Link to="/" className="SingleNavOption">
+        Home
+      </Link>
       <Link to="/reviews" className="SingleNavOption">
         Reviews
       </Link>

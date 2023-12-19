@@ -1,7 +1,7 @@
+* {
+  box-sizing: border-box;
+}
 #root {
-  /* max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem; */
   background-color: rgb(240, 240, 240);
   text-align: center;
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
@@ -17,13 +17,6 @@
 .HeaderImage {
   width: 100%;
 }
-
-/* .HeaderContent {
-  margin: 0 auto;
-  width: 96%;
-  font-weight: 700;
-} */
-
 .Nav {
   background-color: rgb(220, 139, 205);
   width: 100%;
@@ -31,14 +24,6 @@
   flex-flow: row wrap;
   justify-content: center;
 }
-
-/* .Nav {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: rgb(220, 139, 205);
-} */
 
 .SingleNavOption {
   /* float: left;
@@ -72,25 +57,8 @@
   font-weight: 800;
 }
 
-@media all and (max-width: 800px) {
-  .Nav {
-    /* When on medium sized screens, we center it by evenly distributing empty space around items */
-    justify-content: center;
-  }
-  /* .HeaderImage {
-    width: 100%;
-  } */
-}
-
-/* Small screens */
-@media all and (max-width: 500px) {
-  .Nav {
-    /* On small screens, we are no longer using row direction but column */
-    flex-direction: column;
-  }
-  /* .HeaderImage {
-    width: 100%;
-  } */
+.Home {
+  padding: 15px;
 }
 .sortingOptions {
   font-size: 16px;
@@ -121,7 +89,7 @@
   list-style: none;
 }
 .flex-container > li {
-  flex-basis: 30vw; /* width: 350px; */
+  flex-basis: 30vw;
   position: relative;
   cursor: pointer;
 }
@@ -224,7 +192,6 @@ a:hover {
 }
 
 .ReviewContainer {
-  /* border: 3px solid rgb(210, 191, 13); */
   padding: 15px;
   content: "";
   display: table;
@@ -232,11 +199,8 @@ a:hover {
 }
 .ReviewTitle {
   text-align: center;
-  /* color: rgb(0, 29, 61); */
   font-weight: 700;
   font-size: x-large;
-  /* margin-block: 0px; */
-  /* padding: 10px; */
 }
 .review_image {
   margin: 1%;
@@ -254,12 +218,14 @@ a:hover {
   width: 35px;
   height: 35px;
   padding: 5px;
+  margin-top: 10px;
   border-radius: 50%;
 }
 .thumb-up {
   width: 35px;
   height: 35px;
   padding: 5px;
+  margin-top: 10px;
   border-radius: 50%;
 }
 .thumb-up:hover {
@@ -274,23 +240,32 @@ a:hover {
 }
 
 .CommentsContainer {
-  /* border: 3px solid rgb(18, 79, 5); */
   padding: 15px;
   content: "";
   display: table;
-  justify-content: center;
-  width: 97.5%;
+  width: 100%;
 }
 .CommentForm {
-  background-color: rgb(191, 219, 174);
-  padding: 10px;
+  background-color: rgb(217, 184, 230);
+  padding-bottom: 10px;
+  margin-bottom: 15px;
 }
 .CommentDateAndAuthor {
   font-style: oblique;
 }
 .singleComment {
   border: 1px solid blue;
-  margin: 2px;
+  background-color: rgb(220, 139, 205);
+  padding: 10px;
+  margin-bottom: 5px;
+  font-size: medium;
+}
+textarea {
+  border: 2px solid blue;
+  width: 98%;
+  height: 10vh;
+  margin: 5px 0;
+  padding: 3px;
 }
 .votes {
   font-family: "Noto Sans", sans-serif;
@@ -303,21 +278,12 @@ a:hover {
   width: 10px;
   height: 25px;
 }
-.AccountsContainer li img {
-  width: 20vw;
-  height: 35vh;
-  border: 5px solid rgb(250, 171, 24);
-  border-radius: 20%;
-  max-width: 100%;
-}
 
 .AccountsContainer {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  padding: 0;
-  margin: 0;
   list-style: none;
 }
 
@@ -326,7 +292,13 @@ a:hover {
   position: relative;
   cursor: pointer;
 }
-
+.AccountsContainer li img {
+  width: 20vw;
+  height: 35vh;
+  border: 5px solid rgb(250, 171, 24);
+  border-radius: 20%;
+  max-width: 100%;
+}
 .NavName {
   color: rgb(0, 0, 0);
 }
@@ -334,16 +306,11 @@ a:hover {
   color: red;
   font-weight: bold;
 }
-textarea {
-  border: 2px solid blue;
-  width: 99%;
-  height: 110px;
-  margin: 5px 0;
-  padding: 3px;
-}
+
 .Categories {
   text-align: left;
   margin-left: 25px;
+  margin-right: 25px;
 }
 .CategoriesHeader {
   text-align: center;
@@ -355,4 +322,57 @@ textarea {
 .CategoryLink {
   font-weight: 500;
   color: #004ef6;
+}
+
+/* When on medium sized screens */
+@media all and (max-width: 1000px) {
+  .flex-container > li {
+    flex-basis: 45vw;
+  }
+
+  .flex-container li img {
+    height: 40vh;
+  }
+
+  .overlay {
+    height: 40vh;
+  }
+
+  .AccountsContainer > li {
+    flex-basis: 30vw;
+  }
+  .AccountsContainer li img {
+    width: 30vw;
+    height: 25vh;
+  }
+}
+/* Small screens */
+@media all and (max-width: 600px) {
+  .Nav {
+    flex-direction: column;
+  }
+  .SingleNavOption {
+    padding: 5px 5px;
+    border-right: 0px;
+  }
+  .flex-container > li {
+    flex-basis: 90vw;
+  }
+
+  .flex-container li img {
+    height: 35vh;
+    border-radius: 5px;
+  }
+
+  .overlay {
+    height: 35vh;
+  }
+
+  .AccountsContainer > li {
+    flex-basis: 40vw;
+  }
+  .AccountsContainer li img {
+    width: 40vw;
+    height: 25vh;
+  }
 }

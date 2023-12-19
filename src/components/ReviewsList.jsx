@@ -14,9 +14,6 @@ export function ReviewsList() {
   });
   let { state } = useLocation();
 
-  console.log("Review Category: ", chosenReviewCategory);
-  console.log(searchQuery);
-
   useEffect(() => {
     setSearchQuery((currQuery) => {
       return {
