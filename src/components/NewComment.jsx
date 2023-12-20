@@ -33,18 +33,18 @@ export function NewComment({ setComments }) {
   }
 
   return (
-    <form className="CommentForm" onSubmit={handleSubmit}>
-      <label htmlFor="newComment">
+    <form className="comment-form" onSubmit={handleSubmit}>
+      <label htmlFor="new-comment">
         <b>Share your thoughts:</b>
       </label>
       <textarea
-        id="newComment"
+        id="new-comment"
         value={newComment}
         onChange={handleChange}
         placeholder="Don't forget to sign-in to your account before posting!"
       ></textarea>
       <button type="submit">Add a comment</button>
-      <p className="errorMessage">{errorMessage}</p>
+      <p className="error-message">{errorMessage}</p>
     </form>
   );
 }

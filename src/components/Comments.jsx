@@ -21,20 +21,20 @@ export function Comments() {
     return <h3>Comments are loading...</h3>;
   }
   return (
-    <section className="CommentsContainer">
+    <section className="comments-container">
       <h3>{comments.length} comments so far:</h3>
       <NewComment setComments={setComments} />
       {comments.map((comment) => {
         return (
-          <div key={comment.comment_id} className="singleComment">
-            <div className="CommentDateAndAuthor">
+          <div key={comment.comment_id} className="single-comment">
+            <div className="comment-date-and-author">
               Posted {comment.created_at.slice(0, 10)} at{" "}
               {comment.created_at.slice(11, 19)} by {comment.author}:
             </div>
             <p>
               <b>{comment.body}</b>
             </p>
-            <div className="VotesWrapper">
+            <div className="votes-wrapper">
               <img
                 className="arrow-down"
                 src={arrow_down}

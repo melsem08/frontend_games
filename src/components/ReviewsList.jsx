@@ -55,17 +55,16 @@ export function ReviewsList() {
       ) : (
         <h2>Board Game Reviews</h2>
       )}
-      <div className="sortingOptions">
-        <label htmlFor="sortingOptions">Sort By: </label>
+      <div className="sorting-options">
+        <label htmlFor="sorting-options">Sort By: </label>
         <select
-          name="sortingOptions"
+          name="sorting-options"
           onChange={(event) => changeSortBy(event.target.value)}
         >
           <option value="created_at">Date</option>
           <option value="comment_count">Comment Count</option>
           <option value="votes">Votes</option>
         </select>
-
         <button onClick={() => changeOrder("asc")}>Ascending</button>
         <button onClick={() => changeOrder("desc")}>Descending</button>
       </div>
@@ -83,19 +82,15 @@ export function ReviewsList() {
                 </Link>
               }
               <img
-                className="reviewImage"
                 src={review.review_img_url}
                 alt={`Image for ${review.title}`}
               />
-              {/* <Link to={`/reviews/${review.review_id}`}>
-                <h3 className="ReviewsTitle">{review.title}</h3>
-              </Link> */}
-              <div className="reviewInfo">
+              <div className="review-info">
                 <a className="user-link">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 500 500"
-                    className="svg-avatar"
+                    className="svg"
                   >
                     <path
                       fill="currentColor"
@@ -108,7 +103,7 @@ export function ReviewsList() {
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 16 16"
-                    className="svg-avatar"
+                    className="svg"
                   >
                     <path
                       fill="currentColor"
@@ -121,7 +116,7 @@ export function ReviewsList() {
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"
-                    className="svg-avatar"
+                    className="svg"
                   >
                     <path
                       fill="currentColor"
@@ -135,7 +130,7 @@ export function ReviewsList() {
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 16 16"
-                  className="svg-avatar"
+                  className="svg"
                 >
                   <path
                     fill="currentColor"
@@ -145,7 +140,7 @@ export function ReviewsList() {
                 {review.votes}
               </div>
               <Link to={`/reviews/${review.review_id}`}>
-                <h3 className="ReviewsTitle">{review.title}</h3>
+                <h3 className="review-title">{review.title}</h3>
               </Link>
             </li>
           );

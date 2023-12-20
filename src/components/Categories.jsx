@@ -18,8 +18,8 @@ export function Categories() {
   }
 
   return (
-    <main className="Categories">
-      <h2 className="CategoriesHeader">Board Game Reviews Categories</h2>
+    <main className="categories">
+      <h2 className="categories-header">Board Game Reviews Categories</h2>
       <p>
         If you want to browse some specific categories we’ve curated it just for
         you. Here you will find reviews of strategy games, dexterity games,
@@ -32,12 +32,12 @@ export function Categories() {
           return (
             <li key={category.slug}>
               <p>
-                <span className="CategoryName">{category.slug}</span>{" "}
+                <span className="category-name">{category.slug}</span>{" "}
                 {category.description}
               </p>
               <Link
                 to={`/reviews?category=${category.slug}`}
-                className="CategoryLink"
+                className="category-link"
               >
                 Click here to choose {category.slug} category
               </Link>

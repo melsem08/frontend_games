@@ -1,6 +1,6 @@
 export function Home() {
   return (
-    <main className="Home">
+    <main className="home">
       <h2>Welcome!</h2>
       <p>
         Welcome to the Games World Magazine — a board games content rating and

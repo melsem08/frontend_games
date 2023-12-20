@@ -4,12 +4,12 @@ import { Link } from "react-router-dom";
 export function Header() {
   return (
     <Link to={`/`}>
-      <div className="Header">
+      <div className="header">
         <header>
           <img
             src={header_logo}
             alt="Header Logo"
-            className="HeaderImage"
+            className="header-image"
           ></img>
         </header>
       </div>

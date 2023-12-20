@@ -35,8 +35,8 @@ export function SingleReview() {
 
   return (
     <main>
-      <article className="ReviewContainer">
-        <h2 className="ReviewTitle">{currentReview.title}</h2>
+      <article className="review-container">
+        <h2 className="review-title">{currentReview.title}</h2>
         <div>
           <b>Posted:</b> {currentReview.created_at.slice(0, 10)}
           <br />
@@ -46,14 +46,14 @@ export function SingleReview() {
           </Link>
         </div>
         <img
-          className="review_image"
+          className="review-image"
           src={currentReview.review_img_url}
           alt={`Image of ${currentReview.title}`}
         />
         <p>{currentReview.review_body}</p>
         <b>Game designer: </b> {currentReview.designer} <br />
         <b>Reviewer: </b> {currentReview.owner}
-        <div className="VotesWrapper">
+        <div className="votes-wrapper">
           <img
             className="thumb-down"
             src={thumb_down}

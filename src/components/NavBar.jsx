@@ -7,20 +7,20 @@ export function NavBar({ setUser }) {
   function checkSignIn() {
     if (user.username === undefined) {
       return (
-        <Link to="/sign_in" className="SingleNavOption">
+        <Link to="/sign_in" className="single-nav-option">
           Sign in
         </Link>
       );
     } else {
       return (
         <>
-          <div className="SingleNavOption" onClick={handleClick}>
+          <div className="single-nav-option" onClick={handleClick}>
             {/* <div className="SignOut">
             <a onClick={handleClick}>Sign out</a>
           </div> */}
             Sign Out
           </div>
-          <div className="Username">Hello, {user.username}</div>
+          <div className="username">Hello, {user.username}</div>
         </>
       );
     }
@@ -30,14 +30,14 @@ export function NavBar({ setUser }) {
     }
   }
   return (
-    <nav className="Nav">
-      <Link to="/" className="SingleNavOption">
+    <nav className="nav">
+      <Link to="/" className="single-nav-option">
         Home
       </Link>
-      <Link to="/reviews" className="SingleNavOption">
+      <Link to="/reviews" className="single-nav-option">
         Reviews
       </Link>
-      <Link to="/categories" className="SingleNavOption">
+      <Link to="/categories" className="single-nav-option">
         Categories
       </Link>
       {checkSignIn()}
