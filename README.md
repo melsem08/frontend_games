@@ -5,7 +5,9 @@ Front-end Project developed based on the API from Back-end Project.
 ## Content
 
 [General Info](#general-info)
+
 [Link To Deployed Version](#link-to-deployed-version)
+
 [Cloning And Setup](#cloning-and-setup)
 
 ## General Info
@@ -16,7 +18,7 @@ Games World Magazine — a board games content rating and discussion website. Yo
 
 This front-end project is built using back-end project I worked before, you can find it [here on Github](https://github.com/melsem08/backend_games)
 
-The hosted API for this back-end is located [here] (https://games-api-project.onrender.com/api)
+The hosted API for this back-end is located [here](https://games-api-project.onrender.com/api)
 
 ## Link To Deployed Version
 
@@ -29,27 +31,23 @@ To clone and run this application, you'll need [Git](https://git-scm.com) and [N
 To clone this repo to your desktop run a command from your command line:
 
 ```bash
-# Clone this repository
 $ git clone https://github.com/melsem08/frontend_games.git
 ```
 
 After you clone this repo to your desktop, make sure you cd to its root directory:
 
 ```bash
-# Go into the repository
 $ cd frontend_games
 ```
 
 Now you have to be able to type `npm install` to install its dependencies:
 
 ```bash
-# Install dependencies
 $ npm install
 ```
 
 Once the dependencies are installed, you can run `npm run dev` to start the project locally:
 
 ```bash
-# Run the project
 $ npm run dev
 ```
